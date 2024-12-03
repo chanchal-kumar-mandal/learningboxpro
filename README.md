@@ -9,7 +9,15 @@ This is a React-based application for viewing a variety of free and premium vide
 ## Requirements
 
 ### Install Nodejs
+Download the Latest Node.js Installer:
+
+Go to the official Node.js website: https://nodejs.org/en/.
+Download the LTS (Long Term Support) version for Windows.
 https://nodejs.org/en/download/
+
+checking the version
+$ node -v
+$npm -v
 
 ### Install Visual Studio (VS) Code
 https://code.visualstudio.com/download
@@ -55,8 +63,20 @@ $ git commit -am "Your message related to commit"
 $ git push origin HEAD
 
 
-### Set up Firebase Hosting https://console.firebase.google.com/project/learningboxpro/hosting/sites/learningboxpro
+### Set up Firebase Hosting 
+Follow https://console.firebase.google.com/project/learningboxpro/hosting/sites/learningboxpro
 $ npm install -g firebase-tools
+$ firebase login
+$ firebase init
+$ npm install firebase (skip if already done for auth or data store)
+$ firebase deploy
+$ firebase hosting:channel:deploy learningboxpro
+
+
+### Reinstall All Dependencies: If you suspect multiple dependencies may be outdated, try reinstalling everything:
+
+$ rm -rf node_modules package-lock.json
+$ npm install
 
 
 ### Imporatnat links

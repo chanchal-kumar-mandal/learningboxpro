@@ -5,28 +5,33 @@ import ViewContent from "./ViewContent"; // Import the modal component
 
 const videoData = [
   {
-    title: "Motivational Video 1",
-    description: "Arnold Schwarzenegger Motivational Speech",
-    videoUrl: "https://www.youtube.com/embed/1bumPyvzCyo",
+    title: "Mere Mehboob Qayamat Hogi",
+    description: "Mr. X In Bombay - Kishore Kumar",
+    videoUrl: "https://www.youtube.com/embed/yIzCBU0_LyY",
   },
   {
-    title: "Motivational Video 2",
-    description: "Steve Jobs Motivational Speech",
-    videoUrl: "https://www.youtube.com/embed/Tuw8hxrFBH8",
+    title: "Aane Se Uske Aaye Bahar",
+    description: "Jeene Ki Raah - Mohammed Rafi",
+    videoUrl: "https://www.youtube.com/embed/GNTNnp5rk5E",
   },
   {
-    title: "Motivational Video 3",
-    description: "Denzel Washington Motivational Speech",
-    videoUrl: "https://www.youtube.com/embed/tbnzAVRZ9Xc",
+    title: "Jaadu Teri Nazar",
+    description: "Darr | Shah Rukh Khan, Juhi Chawla | Udit Narayan | Shiv-Hari | Anand Bakshi",
+    videoUrl: "https://www.youtube.com/embed/n_oP9Onj0r0",
   },
   {
-    title: "Motivational Video 4",
-    description: "Admiral McRaven Motivational Speech",
-    videoUrl: "https://www.youtube.com/embed/TBuIGBCF9jc",
+    title: "Baazigar O Baazigar",
+    description: "Shahrukh & Kajol | Baazigar | Ishtar | Kumar Sanu & Alka Yagnik",
+    videoUrl: "https://www.youtube.com/embed/PUO7_Gi6ipg",
+  },
+  {
+    title: "Aisa Deewana",
+    description: "Dil Maange More | Sonu Nigam | Himesh R|Shahid Kapoor, Tulip Joshi",
+    videoUrl: "https://www.youtube.com/embed/X4TyG9grBSw",
   },
 ];
 
-const MotivationalContent = () => {
+const SongContentHindi = () => {
   const [visibleVideos, setVisibleVideos] = useState(3); // Control the number of videos shown
   const [selectedVideo, setSelectedVideo] = useState(null); // Track the selected video
   const [showModal, setShowModal] = useState(false); // Track modal visibility
@@ -49,16 +54,13 @@ const MotivationalContent = () => {
     <div
       className="container mt-4"
       style={{
-        background: "linear-gradient(to bottom, #f0f8ff, #e6f7ff)",
+        background: "linear-gradient(to bottom, #ff7f7f, #ffbaba)",
         padding: "30px",
         borderRadius: "10px",
       }}
     >
-      <h1
-        className="text-center mb-4"
-        style={{ color: "#3b3b3b", fontWeight: "bold" }}
-      >
-        🌟 Motivational Content
+      <h1 className="text-center mb-4" style={{ color: "#3b3b3b", fontWeight: "bold" }}>
+        💽 Hindi Song
       </h1>
       <Row className="justify-content-center">
         {videoData.slice(0, visibleVideos).map((video, index) => (
@@ -68,12 +70,17 @@ const MotivationalContent = () => {
               style={{ borderRadius: "15px" }}
             >
               <Card.Body className="d-flex flex-column">
-                <Card.Title className="text-primary text-center">
+                <Card.Title
+                  className="text-primary text-center"
+                  style={{
+                    minHeight: "60px", // Ensures consistent height for titles
+                  }}
+                >
                   {video.title}
                 </Card.Title>
                 <div
                   className="embed-responsive embed-responsive-16by9 rounded shadow-sm flex-grow-1"
-                  style={{ minHeight: "200px" }} // Ensure responsiveness
+                  style={{ minHeight: "200px" }}
                 >
                   <iframe
                     className="embed-responsive-item"
@@ -90,7 +97,11 @@ const MotivationalContent = () => {
                 </div>
                 <Card.Text
                   className="mt-3 text-muted text-center flex-grow-1"
-                  style={{ minHeight: "60px" }} // Uniform height for descriptions
+                  style={{
+                    minHeight: "60px", // Ensures consistent height for descriptions
+                    overflowY: "auto", // Allows scrolling for long descriptions
+                    WebkitOverflowScrolling: "touch", // Smooth scrolling on mobile
+                  }}
                 >
                   {video.description}
                 </Card.Text>
@@ -137,4 +148,4 @@ const MotivationalContent = () => {
   );
 };
 
-export default MotivationalContent;
+export default SongContentHindi;

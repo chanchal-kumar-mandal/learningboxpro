@@ -139,10 +139,10 @@ const HealthContentBengali = () => {
     <div
       className="container mt-4"
       style={{
-        background: "linear-gradient(to bottom, #ffb6b9, #fae3d9)", // Muted peach gradient
+        background: "linear-gradient(to bottom, #85e085, #ccffcc)",
         padding: "30px",
         borderRadius: "10px",
-        fontFamily: "'Noto Sans Bengali', sans-serif", // Applying Bengali font to the container
+        fontFamily: "'Noto Sans Bengali', sans-serif",
       }}
     >
       <h1 className="text-center mb-4" style={{ color: "#3b3b3b", fontWeight: "bold" }}>
@@ -150,35 +150,50 @@ const HealthContentBengali = () => {
       </h1>
       <Row className="justify-content-center">
         {videoData.slice(0, visibleVideos).map((video, index) => (
-          <Col md={6} lg={4} key={index} className="mb-4">
-            <Card className="shadow-sm border-0" style={{ borderRadius: "15px" }}>
-              <Card.Body>
-                <Card.Title className="text-primary" style={{ height: '60px', overflow: 'hidden' }}>
+          <Col xs={12} sm={12} md={6} lg={4} key={index} className="mb-4">
+            <Card
+              className="shadow-sm border-0 h-100"
+              style={{ borderRadius: "15px" }}
+            >
+              <Card.Body className="d-flex flex-column">
+                <Card.Title
+                  className="text-primary text-center"
+                  style={{
+                    minHeight: "60px", // Ensures consistent height for titles
+                  }}
+                >
                   {video.title}
                 </Card.Title>
-                <div className="embed-responsive embed-responsive-16by9 rounded shadow-sm">
+                <div
+                  className="embed-responsive embed-responsive-16by9 rounded shadow-sm flex-grow-1"
+                  style={{ minHeight: "200px" }}
+                >
                   <iframe
                     className="embed-responsive-item"
                     src={video.videoUrl}
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     title={video.title}
-                    style={{ borderRadius: "10px" }}
+                    style={{
+                      borderRadius: "10px",
+                      width: "100%",
+                      height: "100%",
+                    }}
                   ></iframe>
                 </div>
                 <Card.Text
-                  className="mt-3 text-muted"
+                  className="mt-3 text-muted text-center flex-grow-1"
                   style={{
-                    height: '60px', // Set fixed height for description
-                    overflowY: 'auto', // Add scrollbar for overflow content
-                    WebkitOverflowScrolling: 'touch', // Smooth scrolling for mobile devices
+                    minHeight: "60px", // Ensures consistent height for descriptions
+                    overflowY: "auto", // Allows scrolling for long descriptions
+                    WebkitOverflowScrolling: "touch", // Smooth scrolling on mobile
                   }}
                 >
                   {video.description}
                 </Card.Text>
                 <Button
                   variant="primary"
-                  className="d-flex align-items-center justify-content-center w-100"
+                  className="d-flex align-items-center justify-content-center mt-auto w-100"
                   onClick={() => handleShowModal(video)}
                 >
                   <FaPlay className="me-2" />

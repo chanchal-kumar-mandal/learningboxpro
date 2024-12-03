@@ -9,6 +9,7 @@ import SignUp from "./SignUpFirestore";
 import SignIn from "./SignIn";
 import MotivationalContent from "./MotivationalContent";
 import HealthContentBengali from "./HealthContentBengali";
+import SongContentHindi from "./SongContentHindi";
 import EditUser from "./EditUser";
 
 const App = () => {
@@ -113,6 +114,9 @@ const App = () => {
 
           {/* Health Content Bengali */}
           <HealthContentBengali />
+
+          {/* Song Content Hindi */}
+          <SongContentHindi />
 
           {/* Edit Profile */}
           {isEditing && (

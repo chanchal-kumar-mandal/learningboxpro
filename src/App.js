@@ -5,18 +5,19 @@ import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "./firebase";
+import Menu from "./Menu";
+import EditUser from "./EditUser";
 import SignUp from "./SignUpFirestore";
 import SignIn from "./SignIn";
 import MotivationalContent from "./MotivationalContent";
 import HealthContentBengali from "./HealthContentBengali";
 import SongContentHindi from "./SongContentHindi";
-import EditUser from "./EditUser";
 
 const App = () => {
   const [user, setUser] = useState(undefined);
   const [userData, setUserData] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [isSignUp, setIsSignUp] = useState(false); // Define isSignUp state
+  const [isSignUp, setIsSignUp] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -35,14 +36,13 @@ const App = () => {
       }
     });
 
-    return () => unsubscribe(); // Cleanup
+    return () => unsubscribe();
   }, []);
-
 
   const handleSignOut = async () => {
     try {
       await signOut(auth);
-      setUserData(null); // Reset user data on sign out
+      setUserData(null);
     } catch (error) {
       console.error("Sign-out error:", error.message);
     }
@@ -60,65 +60,17 @@ const App = () => {
     <div className="container mt-5">
       {user ? (
         <>
-          {/* Profile Section */}
-          <div className="card shadow-sm">
-            <div className="card-body">
-              <div className="d-flex align-items-center">
-                {/* Profile Picture or Avatar */}
-                <div className="avatar me-3">
-                  <img
-                    src="https://www.w3schools.com/w3images/avatar2.png" // Placeholder image, replace with actual if available
-                    alt="Avatar"
-                    className="rounded-circle"
-                    width="80"
-                    height="80"
-                  />
-                </div>
-
-                {/* User Info */}
-                <div>
-                  <h4 className="mb-1">
-                    {userData?.firstName} {userData?.lastName || ""}
-                  </h4>
-                  <p className="text-muted">Welcome back!</p>
-                  <div>
-                    <span className="badge bg-primary me-2">
-                      Member since {userData?.signUpDate || "NA"}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-4">
-                {/* Edit Profile Button with Icon */}
-                <button
-                  onClick={() => setIsEditing(true)}
-                  className="btn btn-outline-primary me-2"
-                >
-                  <i className="bi bi-pencil-square me-2"></i> Edit Profile
-                </button>
-
-                {/* Sign Out Button with Icon */}
-                <button
-                  onClick={handleSignOut}
-                  className="btn btn-outline-danger"
-                >
-                  <i className="bi bi-box-arrow-right me-2"></i> Sign Out
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Motivational Content */}
+          <Menu
+            user={user}
+            userData={userData}
+            setIsEditing={setIsEditing}
+            handleSignOut={handleSignOut}
+          />
           <MotivationalContent />
-
-          {/* Health Content Bengali */}
           <HealthContentBengali />
-
-          {/* Song Content Hindi */}
           <SongContentHindi />
 
-          {/* Edit Profile */}
+          {/* Edit Profile Modal */}
           {isEditing && (
             <EditUser
               userId={user.uid}

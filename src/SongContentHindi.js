@@ -52,6 +52,7 @@ const SongContentHindi = () => {
 
   return (
     <div
+      id="songs"
       className="container mt-4"
       style={{
         background: "linear-gradient(to bottom, #ff7f7f, #ffbaba)",

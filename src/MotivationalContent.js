@@ -47,6 +47,7 @@ const MotivationalContent = () => {
 
   return (
     <div
+      id="motivational"
       className="container mt-4"
       style={{
         background: "linear-gradient(to bottom, #f0f8ff, #e6f7ff)",

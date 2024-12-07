@@ -137,6 +137,7 @@ const HealthContentBengali = () => {
 
   return (
     <div
+      id="health"
       className="container mt-4"
       style={{
         background: "linear-gradient(to bottom, #85e085, #ccffcc)",

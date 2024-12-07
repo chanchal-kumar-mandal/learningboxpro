@@ -85,6 +85,8 @@ $ npm install
 
 ### Set up Github Hosting 
 1. Create a GitHub Repository
+	Go to GitHub and create a new repository for your project.
+	Initialize the repository with a README if you like.
 2. Push Your React App to GitHub (if not already done)
 
 	git init  # Initialize git if not done already

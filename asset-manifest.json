@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/learningboxpro/static/css/main.6876c36e.css",
-    "main.js": "/learningboxpro/static/js/main.fbad7f23.js",
+    "main.js": "/learningboxpro/static/js/main.e4001e60.js",
     "static/js/453.ff1ba968.chunk.js": "/learningboxpro/static/js/453.ff1ba968.chunk.js",
     "static/media/bootstrap-icons.woff?": "/learningboxpro/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/bootstrap-icons.woff2?": "/learningboxpro/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "index.html": "/learningboxpro/index.html",
     "main.6876c36e.css.map": "/learningboxpro/static/css/main.6876c36e.css.map",
-    "main.fbad7f23.js.map": "/learningboxpro/static/js/main.fbad7f23.js.map",
+    "main.e4001e60.js.map": "/learningboxpro/static/js/main.e4001e60.js.map",
     "453.ff1ba968.chunk.js.map": "/learningboxpro/static/js/453.ff1ba968.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6876c36e.css",
-    "static/js/main.fbad7f23.js"
+    "static/js/main.e4001e60.js"
   ]
 }

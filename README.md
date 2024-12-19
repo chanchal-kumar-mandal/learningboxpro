@@ -5,6 +5,14 @@ This is a React-based application for viewing a variety of free and premium vide
 ## Live App: https://chanchal-kumar-mandal.github.io/learningboxpro/
 
 ## Demo Screenshots
+# Desktop
+![image](https://github.com/user-attachments/assets/c1dcd537-090a-4c12-9718-5d291c7ff952)
+![image](https://github.com/user-attachments/assets/6e9f473f-bb0a-4592-807e-41ffb831ced5)
+![image](https://github.com/user-attachments/assets/19c95a20-1f1f-4bb5-bf94-cdd268f30a04)
+
+# Mobile
+![image](https://github.com/user-attachments/assets/2afc6030-a781-4c3e-80d6-19bb2b5bcde7)
+![image](https://github.com/user-attachments/assets/f7c851fb-9157-4c8a-b6da-ef0e2dcb055a)
 
 ## Requirements
 
